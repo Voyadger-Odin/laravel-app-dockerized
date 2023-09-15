@@ -10,7 +10,7 @@ services:
       - ${PORT_NGINX_LOCAL}:80
     volumes:
       # Брать файл конфигурации nginx из своей файловой системы (ro - read only)
-      - ./config/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./config/nginx/conf.d/:/etc/nginx/conf.d/:ro
       # Общая папка проекта в своей файловой системе
       - ${SITE_LOCAL_PATH}:${SITE_PATH}
     depends_on:
